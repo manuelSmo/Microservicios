@@ -15,6 +15,7 @@ repositories {
 
 ext {
 	set('springCloudVersion', "2020.0.3")
+	set('springBootAdminVersion', "2.3.1")
 }
 
 dependencies {
@@ -29,6 +30,8 @@ dependencies {
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix', version: '2.2.8.RELEASE'
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix-dashboard', version: '2.2.8.RELEASE'
 
+	implementation 'de.codecentric:spring-boot-admin-starter-client'
+
 	//implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	compileOnly 'org.projectlombok:lombok'
@@ -41,6 +44,7 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
 	}
 }
 
