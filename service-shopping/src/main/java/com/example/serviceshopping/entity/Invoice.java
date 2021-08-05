@@ -1,5 +1,6 @@
 package com.example.serviceshopping.entity;
 
+import com.example.serviceshopping.model.Customer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -39,8 +40,8 @@ public class Invoice {
 
     private String state;
 
-    //@Transient
-    //private Customer customer;
+    @Transient
+    private Customer customer;
 
     public Invoice(){
         items = new ArrayList<>();
